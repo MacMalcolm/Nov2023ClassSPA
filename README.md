@@ -1,5 +1,6 @@
-Use this repository to start class for the lesson 6.1
+Use this repository to start class for the lesson 6.2
 
+## This is my Class SPA
 
 The following packages will need to be installed to support the State-driven SPA using `npm install {package-name}`:
 html-literal
