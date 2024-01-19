@@ -55,6 +55,8 @@ router.get("/:id", async (request, response) => {
 
 // Delete a pizza by ID
 router.delete("/:id", async (request, response) => {
+  console.log(request.path);
+  console.log("request above*****************************");
   try {
     const data = await Pizza.findByIdAndRemove(request.params.id, {});
 
@@ -88,11 +90,12 @@ router.put("/:id", async (request, response) => {
     );
 
     response.json(data);
-  } catch(error) {
+  } catch (error) {
     // Output error to the console incase it fails to send in response
     console.log(error);
 
-    if ('name' in error && error.name === 'ValidationError') return response.status(400).json(error.errors);
+    if ("name" in error && error.name === "ValidationError")
+      return response.status(400).json(error.errors);
 
     return response.status(500).json(error.errors);
   }
